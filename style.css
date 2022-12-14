@@ -85,6 +85,7 @@ nav{
     padding: 0.7rem 0.7rem;
     position: fixed;
     top: 0;
+    z-index: 10;
 }
 nav .container{
     display: flex;
@@ -125,12 +126,16 @@ main .container{
     column-gap: 2rem;
     position: relative;
 }
+
+/* --------left----------- */
+
 main .container .left{
     position: sticky;
     top: var(--sticky-top-left);
     height: max-content;
+    width: 18rem;
 
-}
+} 
 main .container .left .profile{
     background-color: var(--white);
     display: flex;
@@ -155,23 +160,90 @@ main .container .left .profile{
     padding: var(--btn-padding);
     transition: all 300ms ease;
     position: relative;
+   
 }
 .left .sidebar .menu-items:hover{
     background-color: var(--pale-white);
 }
 .left .sidebar i{
     color: var(--grey);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     position: relative;
     margin-left: 2rem;
 }
 .left .sidebar i .notification-count{
     background-color:rgb(249, 64, 64);
     color: white;
-    border-radius: 0.4rem;
+    border-radius: 0.8rem;
     font-size: 0.7rem;
     padding: 0.1rem 0.4rem;
     position: absolute;
     top: -0.1rem;
+    left: -0.01px;
     width: fit-content;
+}
+.left .sidebar h3{
+    margin-left: 1.4rem;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+.left .sidebar .active{
+    background-color: var(--pale-white);
+}
+.left .sidebar .active i, .left .sidebar .active h3{
+    color: var(--blue-grey);
+}
+.left .sidebar .active::before{
+    content: '';
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    background-color: var(--blue-grey);
+    position: absolute;
+    left: 0;
+}
+.left .sidebar .menu-items:first-child.active{
+    border-top-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+.left .sidebar .menu-items:last-child.active{
+    border-bottom-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+.left .btn{
+    text-align: center;
+    margin-top: 1.3rem;
+    width: 100%;
+    padding: 1rem 0;
+}
+.left .notification-popup{
+    position: absolute;
+    top: 0;
+    left: 110%;
+    width: 30rem;
+    background-color: var(--white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    z-index: 8;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.left .notification-popup::before{
+    content: '';
+    width: 1.3rem;
+    height: 1.2rem;
+    background-color: var(--white);
+    display: block;
+    position: absolute;
+    left: -0.6rem;
+    transform: rotate(45deg);
+}
+.left .notification-popup > div{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+.left .notification-popup small{
+    display: block;
 }
