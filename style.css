@@ -68,7 +68,7 @@ img{
     font-weight: 500;
 }
 .container{
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -122,7 +122,7 @@ main{
 }
 main .container{
     display: grid;
-    grid-template-columns: 18vh auto 20vw;
+    grid-template-columns: 1fr 3fr 2fr;
     column-gap: 2rem;
     position: relative;
 }
@@ -133,8 +133,8 @@ main .container .left{
     position: sticky;
     top: var(--sticky-top-left);
     height: max-content;
-    width: 18rem;
-
+   
+   
 } 
 main .container .left .profile{
     background-color: var(--white);
@@ -246,4 +246,95 @@ main .container .left .profile{
 }
 .left .notification-popup small{
     display: block;
+}
+
+/* -----------middle--------------- */
+.middle .stories{
+    display: flex;
+    justify-content: space-between;
+    height: 12rem;
+    gap: 0.7rem;
+}
+.story .profile-picture{
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: start;
+    border: 3px solid var(--blue-grey);
+  
+}
+.story .profile-picture  img{
+    width: 100%;
+    height: 100%;
+}
+.middle .stories .story{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 0.8rem;
+}
+.middle .stories .story::before{
+    content: '';
+    width: 100%;
+    height: 5rem;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+.middle .stories .story .name{
+    z-index: 2;
+}
+.middle .stories .story:nth-child(1){
+    background: url("image/pexels-belle-co-847393.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(2){
+    background: url("image/pexels-cottonbro-studio-5103031.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(3){
+    background: url("image/pexels-engin-akyurt-1498273.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(4){
+    background: url("image/pexels-ethan-brooke-2128039.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(5){
+    background: url("image/pexels-evgeny-tchebotarev-2187605.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(6){
+    background: url("image/pexels-george-desipris-792381.jpg") no-repeat center center/cover;
+}
+
+.middle .create-post{
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+.create-post .profile-picture{
+    width: 3rem;
+    height: 3rem;
+}
+.create-post .profile-picture img{
+    width: 100%;
+   display: block;
+   height: 100%;
+}
+.middle .create-post input[type="text"] {
+    justify-self: start;
+    width: 100%;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    background: transparent;
+    font-size: 0.9rem;
+    margin-right: 1rem;
 }
