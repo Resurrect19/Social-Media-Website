@@ -338,3 +338,19 @@ main .container .left .profile{
     font-size: 0.9rem;
     margin-right: 0.5rem;
 }
+.middle .feeds .feed{
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    background-color: var(--pale-white);
+    line-height: 1.5;
+    font-size: 0.85rem;
+}
+.middle .feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+.middle .feed .user{
+    display: flex;
+    gap: 1rem;
+}
