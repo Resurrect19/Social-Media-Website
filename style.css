@@ -17,6 +17,7 @@
     --pink:#f48fb1;
     --purple:#b39dd8;
     --blue:#90caf9;
+    --green:#69f0ae;
 
     --border-radius:2rem;
     --card-border-radius: 1rem;
@@ -502,4 +503,147 @@ main .container .right{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+}
+.right .request .action{
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+/* ------------customization-theme------------- */
+
+.customize-theme{
+    background-color: rgba(255, 255, 255 ,0.5);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    z-index: 100;
+    font-size: 1rem;
+    display: none;
+}
+.customize-theme .card{
+    background-color: white;
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+.customize-theme .font-size{
+    margin-top: 5rem;
+    
+}
+.customize-theme .font-size > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    background-color: var(--pale-white);
+}
+.customize-theme .choose-size{
+    height: 0.2rem;
+    width: 100%;
+    margin: 0 1rem;
+    background-color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+.customize-theme .choose-size span{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--grey);
+    cursor: pointer;
+}
+.customize-theme .choose-size span.active{
+    background-color:var(--blue);
+}
+/* -------------color--------------------- */
+.customize-theme .color{
+    margin-top: 2rem;
+}
+.customize-theme .choose-color{
+    background-color: var(--pale-white);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.customize-theme .choose-color span{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+.customize-theme .choose-color span:nth-child(1){
+    background-color: var(--blue-grey);
+}
+.customize-theme .choose-color span:nth-child(2){
+    background-color: var(--pink);
+}
+.customize-theme .choose-color span:nth-child(3){
+    background-color: var(--blue);
+}
+.customize-theme .choose-color span:nth-child(4){
+    background-color: var(--purple);
+}
+.customize-theme .choose-color span:nth-child(5){
+    background-color: var(--green);
+}
+
+.customize-theme .choose-color span.active{
+    border: 5px solid var(--white);
+}
+
+
+
+/* ----------background------------ */
+.customize-theme .background{
+    margin-top: 2rem;
+}
+.customize-theme .choose-bg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.customize-theme .choose-bg > div{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    
+
+}
+.customize-theme .choose-bg > div.active{
+    border: 3px solid black;
+}
+.customize-theme .choose-bg > div:nth-child(1){
+    background-color: var(--pale-white);
+}
+.customize-theme .choose-bg > div:nth-child(2){
+    background-color: var(--grey);
+    color: white;
+}
+.customize-theme .choose-bg > div:nth-child(3){
+    background-color: var(--dark-grey);
+    color: white;
+}
+.customize-theme .choose-bg > div span{
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    margin-right: 1rem;
 }
