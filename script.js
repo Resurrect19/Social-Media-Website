@@ -1,4 +1,9 @@
 const menuitems =  document.querySelectorAll(".menu-items");
+// -----------message----------
+const messageNotification = document.querySelector("#message-notification");
+const messages = document.querySelector('.messages');
+const message = messages.querySelectorAll('.message');
+const messageSearch = document.querySelector('#message-search');
 
 
 
@@ -21,3 +26,30 @@ menuitems.forEach(item => {
         }
     })
 })
+
+
+// ---------------message------------------
+messageNotification.addEventListener('click', () => {
+    messages.style.boxShadow = '0 0 1rem var(--blue-grey)';
+    messageNotification.querySelector(".notification-count").style.display= 'none';
+    setTimeout( () => {
+        messages.style.boxShadow= 'none';
+    }, 2000);
+})
+
+
+
+const searchMessage = () => {
+    const val = messageSearch.value.toLowerCase();
+    message.forEach( chat => {
+        let name = chat.querySelector('h5').textContent.toLowerCase();
+        if(name.indexOf(val) != -1){
+            chat.style.display = 'flex';
+        }
+        else{
+            chat.style.display ='none';
+        }
+    })
+};
+
+messageSearch.addEventListener('keyup', searchMessage);
