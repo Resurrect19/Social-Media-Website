@@ -5,6 +5,10 @@ const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message');
 const messageSearch = document.querySelector('#message-search');
 
+// -----------theme--------------
+const theme = document.querySelector("#theme");
+const themeModal = document.querySelector('.customize-theme');
+
 
 
 const changeactive = () => {
@@ -53,3 +57,23 @@ const searchMessage = () => {
 };
 
 messageSearch.addEventListener('keyup', searchMessage);
+
+
+
+
+
+
+
+// -----------Theme Customization-------------------
+const openModal = () => {
+    themeModal.style.display = "grid";
+};
+
+const closeModal = (e) => {
+    if(e.target.classList.contains('customize-theme')){
+        themeModal.style.display = 'none';
+    }
+};
+
+themeModal.addEventListener('click', closeModal);
+theme.addEventListener('click', openModal);
