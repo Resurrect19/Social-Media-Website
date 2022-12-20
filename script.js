@@ -9,7 +9,14 @@ const messageSearch = document.querySelector('#message-search');
 const theme = document.querySelector("#theme");
 const themeModal = document.querySelector('.customize-theme');
 
+// -----------font-customization---------------------
+const fontSizes = document.querySelectorAll(".choose-size span");
+var root = document.querySelector(":root");
 
+
+
+// --------color-customization------------
+const color = document.querySelectorAll('.choose-color span');
 
 const changeactive = () => {
     menuitems.forEach(item => {
@@ -77,3 +84,95 @@ const closeModal = (e) => {
 
 themeModal.addEventListener('click', closeModal);
 theme.addEventListener('click', openModal);
+
+
+
+
+
+// -----------font-size-----------------
+
+
+// -----to remove active----------
+const removeActive = () => {
+    fontSizes.forEach(size => {
+        size.classList.remove('active');
+    })
+}
+
+fontSizes.forEach(size => {
+    let fontSize;
+
+    size.addEventListener('click' , () => {
+        removeActive();
+        size.classList.toggle('active');
+        if(size.classList.contains("font-size-1")){
+            fontSize = '10px';
+            root.style.setProperty(' --sticky-top-left', '5.4rem');
+            root.style.setProperty(' --sticky-top-right', '5.4rem');
+        }
+        else if(size.classList.contains("font-size-2")){
+            fontSize = '13px';
+            root.style.setProperty(' --sticky-top-left', '5.4rem');
+            root.style.setProperty(' --sticky-top-right', '-7rem');
+        }
+        else if(size.classList.contains("font-size-3")){
+            fontSize = '16px';
+            root.style.setProperty(' --sticky-top-left', '-2rem');
+            root.style.setProperty(' --sticky-top-right', '-17rem');
+        }
+        else if(size.classList.contains("font-size-4")){
+            fontSize = '19px';
+            root.style.setProperty(' --sticky-top-left', '-5rem');
+            root.style.setProperty(' --sticky-top-right', '-25rem');
+        }
+        else if(size.classList.contains("font-size-5")){
+            fontSize = '22px';
+            root.style.setProperty(' --sticky-top-left', '-10rem');
+            root.style.setProperty(' --sticky-top-right', '-35rem');
+        }
+        document.querySelector('html').style.fontSize = fontSize;
+    })
+} )
+
+
+
+
+
+
+
+
+
+// -------------color-customization------------
+
+
+const removeColoractive = () => {
+    color.forEach( palette => {
+        palette.classList.remove('active');
+    })
+}
+
+color.forEach(palette => {
+
+    palette.addEventListener('click' ,() => {
+        removeColoractive();
+        palette.classList.toggle('active');
+        let primarycolor;
+    if(palette.classList.contains('color-1')){
+        primarycolor = '#263268';
+    }
+     else if(palette.classList.contains('color-2')){
+        primarycolor = '#f48fb1';
+    }  
+    else if(palette.classList.contains('color-3')){
+        primarycolor = '#90caf9';
+    }
+    else if(palette.classList.contains('color-4')){
+        primarycolor = '#b39dd8';
+    }
+    else if(palette.classList.contains('color-5')){
+        primarycolor = '#69f0ae';
+    }
+    root.style.setProperty('--blue-grey', primarycolor);
+    })
+
+})
