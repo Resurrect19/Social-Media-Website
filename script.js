@@ -180,9 +180,14 @@ color.forEach(palette => {
 
 })
 
-
+const removeBgcoloractive = () => {
+    bgcolor.forEach( Color => {
+        Color.classList.remove('active');
+    })
+}
 bgcolor.forEach(Color => {
     Color.addEventListener('click', () => {
+        removeBgcoloractive();
         Color.classList.toggle('active');
         let bg;
         let subBg;
@@ -204,6 +209,6 @@ bgcolor.forEach(Color => {
         }
         root.style.setProperty('--white', bg);
         root.style.setProperty('--pale-white', subBg);
-        
+        document.querySelector('html').root.style.color = fnt;
     })
 })
