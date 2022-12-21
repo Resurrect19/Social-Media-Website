@@ -14,6 +14,9 @@ const fontSizes = document.querySelectorAll(".choose-size span");
 var root = document.querySelector(":root");
 
 
+// ----------background-color---------------
+const bgcolor = document.querySelectorAll('.choose-bg div');
+
 
 // --------color-customization------------
 const color = document.querySelectorAll('.choose-color span');
@@ -175,4 +178,32 @@ color.forEach(palette => {
     root.style.setProperty('--blue-grey', primarycolor);
     })
 
+})
+
+
+bgcolor.forEach(Color => {
+    Color.addEventListener('click', () => {
+        Color.classList.toggle('active');
+        let bg;
+        let subBg;
+        let fnt;
+        if(Color.classList.contains('bg-1')){
+            bg = '#f5f5f5';
+            subBg = '#e0e0e0';
+            fnt = '#000000';
+        }
+        else if(Color.classList.contains('bg-2')){
+            subBg = '#212121';
+            bg = '#424242';
+            fnt = '#f5f5f5';
+                }
+        else if(Color.classList.contains('bg-3')){
+            subBg = '#010101';
+            bg = '#4a4a4a';
+            fnt = '#f5f5f5';
+        }
+        root.style.setProperty('--white', bg);
+        root.style.setProperty('--pale-white', subBg);
+        
+    })
 })
